@@ -49,7 +49,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="wrapper">
-        <h1>Data has arrived!</h1>
+        <h1>Dumb Data</h1>
         <ul>
           <li>{"productName: " + this.state.productName}</li>
           <img src={this.state.imgUrl} />
