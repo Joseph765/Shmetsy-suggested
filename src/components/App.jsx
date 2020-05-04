@@ -26,6 +26,7 @@ class App extends React.Component {
         var products = JSON.parse(result[0]);
         var shops = JSON.parse(result[1]);
         console.log(JSON.stringify(result[1]));
+        console.log(JSON.stringify(result[0]));
         this.updateInfo(products, shops);
       },
       error: function(err) {
