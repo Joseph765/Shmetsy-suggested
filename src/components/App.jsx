@@ -17,7 +17,16 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const id = window.location.pathname.slice(1, 2);
+    const path = window.location.pathname;
+    let id;
+    if (path[2] === '/') {
+      id = window.location.pathname.slice(1, 2);
+    } else if (path[3] === '/') {
+      id = window.location.pathname.slice(1, 3);
+    } else {
+      id = window.location.pathname.slice(1, 4);
+    }
+    console.log(id);
     $.ajax({
       context: this,
       method: 'GET',
@@ -45,6 +54,7 @@ class App extends React.Component {
       location: shops[0].location,
       profileImgUrl: shops[0].profile_img_url
     });
+    console.log(this.state);
   }
 
   render() {
