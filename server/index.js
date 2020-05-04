@@ -17,7 +17,8 @@ app.get('/products/:id', (req, res, next) => {
       next();
     } else {
         data.push(result);
-        api.get("shops", req.params.id, (shopErr, shopResult) => {
+        let shopId = JSON.parse(result)[0].shop_id;
+        api.get("shops", shopId, (shopErr, shopResult) => {
         if (err) {
           console.log('There was an error getting shops from database: ', shopErr);
           next();

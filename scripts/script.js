@@ -18,7 +18,7 @@ function getRandomDate() {
 
 function addToProducts() {
   for (let i = 2; i < 101; i ++) {
-    if (i === 20) {
+    if (i === 20 || i === 40 || i === 60 || i === 80) {
       shopId += 1;
     }
     const fakeProductName = faker.commerce.productName();

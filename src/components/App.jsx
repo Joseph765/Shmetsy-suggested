@@ -17,7 +17,16 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const id = window.location.pathname.slice(1, 2);
+    const path = window.location.pathname;
+    let id;
+    if (path[2] === '/') {
+      id = window.location.pathname.slice(1, 2);
+    } else if (path[3] === '/') {
+      id = window.location.pathname.slice(1, 3);
+    } else {
+      id = window.location.pathname.slice(1, 4);
+    }
+    console.log(id);
     $.ajax({
       context: this,
       method: 'GET',
@@ -26,6 +35,7 @@ class App extends React.Component {
         var products = JSON.parse(result[0]);
         var shops = JSON.parse(result[1]);
         console.log(JSON.stringify(result[1]));
+        console.log(JSON.stringify(result[0]));
         this.updateInfo(products, shops);
       },
       error: function(err) {
@@ -44,12 +54,13 @@ class App extends React.Component {
       location: shops[0].location,
       profileImgUrl: shops[0].profile_img_url
     });
+    console.log(this.state);
   }
 
   render() {
     return (
       <div className="wrapper">
-        <h1>Data has arrived!</h1>
+        <h1>Dumb Data</h1>
         <ul>
           <li>{"productName: " + this.state.productName}</li>
           <img src={this.state.imgUrl} />
