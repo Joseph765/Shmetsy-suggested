@@ -6,6 +6,10 @@
   color: #222;
 }
 
+/* --------------------------------
+---------- Shop Info --------------
+-------------------------------- */
+
 .fa-arrow-right {
   margin-left: 10px;
 }
@@ -28,6 +32,7 @@
   flex-wrap: wrap;
   background-color: #f8ebe6;
   padding: 2.5%;
+  margin-bottom: 3%;
 }
 
 .shopInfo {
@@ -89,17 +94,18 @@
 }
 
 .shopName:hover {
-  /* border-bottom: 4px solid black; */
   text-decoration: underline;
   text-decoration-color: black;
 }
 
 .price {
+  margin: 5px;
   font-size: 25px;
   font-weight: bold;
 }
 
 .FREEshipping {
+  margin: 5px;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: .5px;
@@ -110,6 +116,7 @@
 }
 
 .Freeshippingeligible {
+  margin: 5px;
   color: grey;
 }
 
@@ -130,10 +137,40 @@
   width: 90%;
 }
 
-.imgItem p {
+.itemName {
   margin: 5px;
 }
 
 .imgItem:hover {
   background-color: white;
+}
+
+/* --------------------------------
+----------- Suggestions -----------
+-------------------------------- */
+
+.alsoLike, .popular {
+  margin-left: 10.4%;
+}
+
+.suggested {
+  display: flex;
+  justify-content: center;
+}
+
+.suggestedItm {
+  font-size: 20px;
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+  margin-bottom: 7%;
+}
+
+.suggestedItm img {
+  height: 250px;
+  width: 270px;
+}
+
+.shopName-small {
+  font-size: 15px;
+  margin: 5px;
 }

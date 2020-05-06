@@ -7,7 +7,7 @@ function ShopInfo({data}) {
       <img src={data.profileImgUrl} />
       <span className="moreFrom">More from</span>
       <span className="shopName">{data.shopName}</span>
-      <span className="seeAll">See all {data.numOfItems} items <i class="fa fa-arrow-right"></i></span>
+      <span className="seeAll">See all {data.numOfItems} items <i className="fa fa-arrow-right"></i></span>
       <div className="salesAndDate">
         <div className="sales">
           <h4>Sales</h4>

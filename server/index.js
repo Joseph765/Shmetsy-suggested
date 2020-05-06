@@ -50,3 +50,13 @@ app.get('/products/:id', (req, res, next) => {
     }
   });
 });
+
+app.get('/get/random', (req, res) => {
+  api.get6Random((err, result) => {
+    if (err) {
+      console.error(`There was an error getting 6 random from database: ${err}`);
+    } else {
+      res.send(result);
+    }
+  });
+});

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import ShopInfo from './ShopInfo.jsx';
 import ShopItems from './ShopItems.jsx';
+import Suggested from './Suggested.jsx';
 
 function App() {
 
@@ -64,6 +65,14 @@ function App() {
       <div className="shop">
         <ShopInfo data={shopInfoData} />
         <ShopItems data={randomItems} />
+      </div>
+      <h1 className="alsoLike">You may also like</h1>
+      <div className="suggested">
+        <Suggested />
+      </div>
+      <h1 className="popular">Popular right now</h1>
+      <div className="suggested">
+        <Suggested />
       </div>
     </div>
   );
