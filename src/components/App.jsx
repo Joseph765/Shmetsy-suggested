@@ -7,7 +7,7 @@ function App() {
 
   const obj = [];
   for (let i = 0; i < 8; i ++) {
-    obj.push({id: 1, name: "1", price: "1", shipping: "1", shop_id: 1, image_url: "1"});
+    obj.push({id: 1, name: "Loading...", price: "Loading...", shipping: "Loading...", shop_id: 1, image_url: "Loading..."});
   }
 
   const [shopInfoData, updateShopInfoData] = useState('test')

@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
 #app {
   font-family: 'Roboto';
+  color: #222;
 }
 
 .fa-arrow-right {
@@ -78,13 +82,16 @@
 
 .shopName {
   font-size: 40px;
-  font-weight: 100;
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 500;
   margin-bottom: 6%;
   cursor: pointer;
 }
 
 .shopName:hover {
-  border-bottom: 4px solid black;
+  /* border-bottom: 4px solid black; */
+  text-decoration: underline;
+  text-decoration-color: black;
 }
 
 .price {
