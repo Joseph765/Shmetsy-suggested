@@ -8,9 +8,11 @@ function ShopItems({ data }) {
       return (
         <div className="imgItem">
           <img src={item.image_url} />
-          <p className="itemName">{item.name}</p>
-          <p className="price">{item.price}</p>
-          <p className={item.shipping.split(' ').join('')}>{item.shipping}</p>
+          <div className="textWrapper">
+            <p className="itemName">{item.name}</p>
+            <p className="price">{item.price}</p>
+            <p className={item.shipping.split(' ').join('')}>{item.shipping}</p>
+          </div>
         </div>
       );
     }

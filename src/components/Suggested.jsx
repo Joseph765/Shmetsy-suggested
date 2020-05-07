@@ -12,7 +12,10 @@ function Suggested() {
       method: 'GET',
       url: '/get/random',
       success: function(result) {
-        updateSuggestionItems(result);
+        if (counter === 2) {
+          console.log(result);
+          updateSuggestionItems(result);
+        }
       },
       error: function(err) {
         console.error('There was an error getting suggested items from database: ', err);
@@ -21,8 +24,10 @@ function Suggested() {
   }
 
   useEffect(() => {
-    counter += 1;
-    get();
+    if (counter === 1) {
+      counter += 1;
+      get();
+    }
   }, [counter]);
 
   const suggestedNodes = suggestionItems.map( item => {

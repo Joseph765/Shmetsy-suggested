@@ -41,7 +41,13 @@ const apiMethods = {
               callback(shopErr);
             } else {
               lastResult.shop_name = JSON.parse(JSON.stringify(shopResult))[0].name;
-              if (results.length === 6 && counter === 0) {
+              let shopNameCounter = 0;
+              for (let i = 0; i < results.length; i += 1) {
+                if (results[i].shop_name) {
+                  shopNameCounter += 1;
+                }
+              }
+              if (shopNameCounter === 6 && counter === 0) {
                 counter += 1;
                 callback(null, results);
               }
