@@ -4,21 +4,29 @@
 #app {
   font-family: 'Roboto';
   color: #222;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* --------------------------------
+---------- Shop Info --------------
+-------------------------------- */
 
 .fa-arrow-right {
-  margin-left: 10px;
+  transform: translateX(5px);
+  transition: .3s ease-out;
 }
 
-.fa-arrow-right:hover {
-  margin-left: 15px;
+.seeAll:hover .fa-arrow-right,
+.shopMore:hover .fa-arrow-right {
+  transform: translateX(10px);
+  transition: all .3s ease-in-out;
 }
 
 .topImg {
   display: flex;
   justify-content: center;
-  width: 60%;
-  height: 50px;
+  width: 100%;
+  object-fit: cover;
   margin-left: auto;
   margin-right: auto;
 }
@@ -28,6 +36,7 @@
   flex-wrap: wrap;
   background-color: #f8ebe6;
   padding: 2.5%;
+  margin-bottom: 3%;
 }
 
 .shopInfo {
@@ -35,20 +44,27 @@
   display: flex;
   flex-direction: column;
   margin-right: 5%;
-  margin-left: 10%;
+  margin-left: 13%;
 }
 
 .shopInfo img {
-  width: 75%;
+  border-radius: 5px;
+  width: 156px;
+  height: 156px;
   margin-bottom: 7%;
 }
 
 .moreFrom {
+  letter-spacing: 1px;
   margin-bottom: 5%;
+  font-size: 13px;
 }
 
 .seeAll {
+  cursor: pointer;
   margin-bottom: 5%;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .salesAndDate {
@@ -62,78 +78,163 @@
 }
 
 .sales h4, .date h4 {
+  font-size: 15px;
   white-space: nowrap;
   color: grey;
-  font-weight: lighter;
+  font-weight: 400;
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 .sales span, .date span {
   font-size: 26px;
+  font-weight: 300;
 }
 
 .based {
   color: grey;
+  font-size: 15px;
 }
 
 .location {
   margin-top: 8px;
-  font-size: 28px;
+  font-size: 25px;
+  font-weight: 300;
 }
 
 .shopName {
-  font-size: 40px;
+  font-size: 32px;
   font-family: 'Nanum Myeongjo', serif;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 6%;
   cursor: pointer;
 }
 
 .shopName:hover {
-  /* border-bottom: 4px solid black; */
   text-decoration: underline;
   text-decoration-color: black;
 }
 
 .price {
-  font-size: 25px;
-  font-weight: bold;
+  margin: 5px;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .FREEshipping {
-  font-size: 15px;
-  font-weight: 600;
+  margin: 5px;
+  font-size: 11px;
+  font-weight: 500;
   letter-spacing: .5px;
-  width: 130px;
-  padding: 2px;
+  text-align: center;
+  width: 88px;
+  padding: 3px;
   background-color: #D4E9D7;
   border-radius: 40px;
 }
 
 .Freeshippingeligible {
+  margin: 5px;
+  font-size: 14px;
   color: grey;
 }
 
 .imgContainer {
   display: flex;
   flex-wrap: wrap;
-  width: 70%;
+  width: 60%;
   font-size: 20px;
 }
 
 .imgItem {
+  transition: .3s ease;
   padding: 13px;
-  border-radius: 30px;
+}
+
+.imgItem, .suggestedItm {
+  cursor: pointer;
+  border-radius: 15px;
   margin-bottom: 3%;
+  transition: 0.3s;
+}
+
+.imgItem:hover, .suggestedItm:hover {
+  background-color: white;
+  box-shadow: 10px 10px 50px grey;
 }
 
 .imgItem img {
+  height: 186px;
+  width: 234px;
+}
+
+.imgWrapper {
+  margin: auto;
+}
+
+.imgWrapper img {
   width: 90%;
 }
 
-.imgItem p {
+.itemName {
   margin: 5px;
+  font-size: 13px;
 }
 
-.imgItem:hover {
-  background-color: white;
+/* --------------------------------
+----------- Suggestions -----------
+-------------------------------- */
+
+.alsoLike {
+  width: 1367px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alsoLike span {
+  vertical-align: bottom;
+  height: 58px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .5px;
+  cursor: pointer;
+}
+
+.popular {
+  margin: auto;
+  margin-bottom: 15px;
+  width: 1367px;
+}
+
+.popular, .alsoLike h1 {
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+.suggested {
+  display: flex;
+  justify-content: center;
+}
+
+.suggestedItm {
+  padding: 11.5px;
+  font-size: 20px;
+  margin-bottom: 5%;
+}
+
+.suggestedItm img {
+  height: 165px;
+  width: 208px;
+}
+
+.shopName-small {
+  font-size: 16px;
+  color: grey;
+  margin: 5px;
 }

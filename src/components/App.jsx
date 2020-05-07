@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import ShopInfo from './ShopInfo.jsx';
 import ShopItems from './ShopItems.jsx';
+import Suggested from './Suggested.jsx';
+import Footer from './Footer.jsx';
 
 function App() {
 
@@ -60,12 +62,24 @@ function App() {
 
   return (
     <div className="wrapper">
-      <img className="topImg" src="https://imgforfec.s3.us-east-2.amazonaws.com/bettershemetsy.png" />
+      <img className="topImg" src="https://imgforfec.s3.us-east-2.amazonaws.com/bettershmetsy.png" />
       <div className="shop">
         <ShopInfo data={shopInfoData} />
         <ShopItems data={randomItems} />
       </div>
+      <div className="alsoLike">
+        <h1>You may also like</h1>
+        <span className="shopMore">Shop more similar items <i className="fa fa-arrow-right"></i></span>
+      </div>
+      <div className="suggested">
+        <Suggested />
+      </div>
+      <h1 className="popular">Popular right now</h1>
+      <div className="suggested">
+        <Suggested />
+      </div>
     </div>
+    <Footer />
   );
 
 }
