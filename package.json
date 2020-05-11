@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --config webpack.config.js -w",
     "populate": "node scripts/script.js",
-    "test": "jest"
+    "test": "jest",
+    "start": "node server/index.js"
   },
   "repository": {
     "type": "git",
