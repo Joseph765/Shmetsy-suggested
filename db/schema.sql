@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS shmetsy;
+CREATE DATABASE IF NOT EXISTS suggested;
 
-USE shmetsy;
+USE suggested;
 
 DROP TABLE IF EXISTS `products`;
 
