@@ -78,8 +78,8 @@ function App() {
       <div className="suggested">
         <Suggested />
       </div>
+      <Footer />
     </div>
-    <Footer />
   );
 
 }

@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display');
+
+body {
+  padding: 0;
+  margin: 0;
+}
 
 #app {
   font-family: 'Roboto';
@@ -237,4 +243,126 @@
   font-size: 16px;
   color: grey;
   margin: 5px;
+}
+
+/* --------------------------------
+------------- Footer --------------
+-------------------------------- */
+
+.footerWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-instagram,
+.fa-facebook,
+.fa-pinterest,
+.fa-twitter,
+.fa-youtube {
+  margin-right: 25px;
+  font-size: 30px;
+}
+
+.bettershmetsy2 {
+  width: 100%;
+  height: 61px;
+  opacity: .92;
+}
+
+.download {
+  font-size: 13px;
+  font-weight: 500;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 5px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+/* .download:hover {
+  border: 3px solid white;
+  transition: .3s ease-in-out;
+} */
+
+.topFooter, .bottomFooter {
+  color: #ffffff;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.shopFooter, .sellFooter, .aboutFooter, .helpFooter {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopFooter span,
+.sellFooter span,
+.aboutFooter span,
+.helpFooter span {
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 13px;
+}
+
+.shopFooter span:hover,
+.sellFooter span:hover,
+.aboutFooter span:hover,
+.helpFooter span:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.logo {
+  padding: 1.5px 7px 1.5px 7px;
+  margin-left: 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: rgb(28, 62, 108, .92);
+  font-family: "playfairDisplay";
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.topFooter h4, .bottomFooter h4 {
+  font-weight: 500;
+}
+
+.topFooter {
+  background-color: rgb(28, 62, 108, .92);
+  padding-bottom: 50px;
+}
+
+.usd img {
+  vertical-align: bottom;
+  margin-right: 15px;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+}
+
+.bottomFooter {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 26px;
+  background-color: rgb(35, 35, 71, .99);
+}
+
+.usd {
+  margin-right: 500px;
+}
+
+.privacy span {
+  letter-spacing: .5px;
+  font-size: 13px;
+  margin-right: 15px;
+}
+
+.privacyLink {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
 }
