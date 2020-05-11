@@ -6,8 +6,7 @@ const app = express();
 const port = 4000;
 
 app.use(express.static(path.join(__dirname, '/../dist')));
-app.use("/:id", express.static(__dirname + '/../dist'));
-// app.use('/:id', express.static('dist'));
+app.use('/:id', express.static('dist'));
 
 app.listen(`${port}`, () => {
   console.log(`Running on port ${port}!`);

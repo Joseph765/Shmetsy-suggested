@@ -32,11 +32,11 @@ function Suggested() {
 
   const suggestedNodes = suggestionItems.map( item => {
     return (
-      <div className="suggestedItm">
+      <div className="joseph-suggestedItm">
         <img src={item.image_url} />
-        <p className="itemName" >{item.name}</p>
-        <div className="shopName-small">{item.shop_name}</div>
-        <div className="price">{item.price}</div>
+        <p className="joseph-itemName" >{item.name}</p>
+        <div className="joseph-shopName-small">{item.shop_name}</div>
+        <div className="joseph-price">{item.price}</div>
         <div className={item.shipping.split(' ').join('')} >{item.shipping}</div>
       </div>
     );
@@ -44,7 +44,7 @@ function Suggested() {
 
 
   return (
-    <div className="suggested">
+    <div className="joseph-suggested">
       {suggestedNodes}
     </div>
   );

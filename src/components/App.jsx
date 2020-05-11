@@ -61,21 +61,21 @@ function App() {
   }
 
   return (
-    <div className="wrapper">
-      <img className="topImg" src="https://imgforfec.s3.us-east-2.amazonaws.com/bettershmetsy.png" />
-      <div className="shop">
+    <div className="joseph-wrapper">
+      <img className="joseph-topImg" src="https://imgforfec.s3.us-east-2.amazonaws.com/bettershmetsy.png" />
+      <div className="joseph-shop">
         <ShopInfo data={shopInfoData} />
         <ShopItems data={randomItems} />
       </div>
-      <div className="alsoLike">
+      <div className="joseph-alsoLike">
         <h1>You may also like</h1>
-        <span className="shopMore">Shop more similar items <i className="fa fa-arrow-right"></i></span>
+        <span className="joseph-shopMore">Shop more similar items <i className="fa fa-arrow-right joseph-rightArrow"></i></span>
       </div>
-      <div className="suggested">
+      <div className="joseph-suggested">
         <Suggested />
       </div>
-      <h1 className="popular">Popular right now</h1>
-      <div className="suggested">
+      <h1 className="joseph-popular">Popular right now</h1>
+      <div className="joseph-suggested">
         <Suggested />
       </div>
       <Footer />

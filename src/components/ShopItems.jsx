@@ -6,11 +6,11 @@ function ShopItems({ data }) {
   const items = data.map( (item, index) => {
     if (index < 8) {
       return (
-        <div className="imgItem">
+        <div className="joseph-imgItem">
           <img src={item.image_url} />
-          <div className="textWrapper">
-            <p className="itemName">{item.name}</p>
-            <p className="price">{item.price}</p>
+          <div className="joseph-textWrapper">
+            <p className="joseph-itemName">{item.name}</p>
+            <p className="joseph-price">{item.price}</p>
             <p className={item.shipping.split(' ').join('')}>{item.shipping}</p>
           </div>
         </div>
@@ -19,7 +19,7 @@ function ShopItems({ data }) {
   })
 
   return (
-    <div className="imgContainer">
+    <div className="joseph-imgContainer">
       {items}
     </div>
   );

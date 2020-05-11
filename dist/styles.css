@@ -7,7 +7,7 @@ body {
   margin: 0;
 }
 
-#app {
+#suggested {
   font-family: 'Roboto';
   color: #222;
   -webkit-font-smoothing: antialiased;
@@ -17,18 +17,18 @@ body {
 ---------- Shop Info --------------
 -------------------------------- */
 
-.fa-arrow-right {
+.joseph-rightArrow {
   transform: translateX(5px);
   transition: .3s ease-out;
 }
 
-.seeAll:hover .fa-arrow-right,
-.shopMore:hover .fa-arrow-right {
+.joseph-shopMore:hover .joseph-rightArrow,
+.joseph-seeAll:hover .joseph-rightArrow {
   transform: translateX(10px);
   transition: all .3s ease-in-out;
 }
 
-.topImg {
+.joseph-topImg {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -37,7 +37,7 @@ body {
   margin-right: auto;
 }
 
-.shop {
+.joseph-shop {
   display: flex;
   flex-wrap: wrap;
   background-color: #f8ebe6;
@@ -45,7 +45,7 @@ body {
   margin-bottom: 3%;
 }
 
-.shopInfo {
+.joseph-shopInfo {
   font-size: 20px;
   display: flex;
   flex-direction: column;
@@ -53,37 +53,37 @@ body {
   margin-left: 13%;
 }
 
-.shopInfo img {
+.joseph-shopInfo img {
   border-radius: 5px;
   width: 156px;
   height: 156px;
   margin-bottom: 7%;
 }
 
-.moreFrom {
+.joseph-moreFrom {
   letter-spacing: 1px;
   margin-bottom: 5%;
   font-size: 13px;
 }
 
-.seeAll {
+.joseph-seeAll {
   cursor: pointer;
   margin-bottom: 5%;
   font-size: 15px;
   font-weight: 500;
 }
 
-.salesAndDate {
+.joseph-salesAndDate {
   display: flex;
   margin-bottom: 20px;
 }
 
-.sales {
+.joseph-sales {
   margin-right: 5%;
   margin-bottom: 2%;
 }
 
-.sales h4, .date h4 {
+.joseph-sales h4, .joseph-date h4 {
   font-size: 15px;
   white-space: nowrap;
   color: grey;
@@ -92,23 +92,23 @@ body {
   margin-bottom: 14px;
 }
 
-.sales span, .date span {
+.joseph-sales span, .joseph-date span {
   font-size: 26px;
   font-weight: 300;
 }
 
-.based {
+.joseph-based {
   color: grey;
   font-size: 15px;
 }
 
-.location {
+.joseph-location {
   margin-top: 8px;
   font-size: 25px;
   font-weight: 300;
 }
 
-.shopName {
+.joseph-shopName {
   font-size: 32px;
   font-family: 'Nanum Myeongjo', serif;
   font-weight: 400;
@@ -116,12 +116,12 @@ body {
   cursor: pointer;
 }
 
-.shopName:hover {
+.joseph-shopName:hover {
   text-decoration: underline;
   text-decoration-color: black;
 }
 
-.price {
+.joseph-price {
   margin: 5px;
   letter-spacing: 1px;
   font-size: 16px;
@@ -146,44 +146,44 @@ body {
   color: grey;
 }
 
-.imgContainer {
+.joseph-imgContainer {
   display: flex;
   flex-wrap: wrap;
   width: 60%;
   font-size: 20px;
 }
 
-.imgItem {
+.joseph-imgItem {
   transition: .3s ease;
   padding: 13px;
 }
 
-.imgItem, .suggestedItm {
+.joseph-imgItem, .joseph-suggestedItm {
   cursor: pointer;
   border-radius: 15px;
   margin-bottom: 3%;
   transition: 0.3s;
 }
 
-.imgItem:hover, .suggestedItm:hover {
+.joseph-imgItem:hover, .joseph-suggestedItm:hover {
   background-color: white;
   box-shadow: 10px 10px 50px grey;
 }
 
-.imgItem img {
+.joseph-imgItem img {
   height: 186px;
   width: 234px;
 }
 
-.imgWrapper {
+.joseph-imgWrapper {
   margin: auto;
 }
 
-.imgWrapper img {
+.joseph-imgWrapper img {
   width: 90%;
 }
 
-.itemName {
+.joseph-itemName {
   margin: 5px;
   font-size: 13px;
 }
@@ -192,7 +192,7 @@ body {
 ----------- Suggestions -----------
 -------------------------------- */
 
-.alsoLike {
+.joseph-alsoLike {
   width: 1367px;
   height: 70px;
   display: flex;
@@ -202,7 +202,7 @@ body {
   margin-right: auto;
 }
 
-.alsoLike span {
+.joseph-alsoLike span {
   vertical-align: bottom;
   height: 58px;
   font-size: 14px;
@@ -211,35 +211,35 @@ body {
   cursor: pointer;
 }
 
-.popular {
+.joseph-popular {
   margin: auto;
   margin-bottom: 15px;
   width: 1367px;
 }
 
-.popular, .alsoLike h1 {
+.joseph-popular, .joseph-alsoLike h1 {
   font-weight: 300;
   letter-spacing: 1px;
   margin-bottom: 0;
 }
 
-.suggested {
+.joseph-suggested {
   display: flex;
   justify-content: center;
 }
 
-.suggestedItm {
+.joseph-suggestedItm {
   padding: 11.5px;
   font-size: 20px;
   margin-bottom: 5%;
 }
 
-.suggestedItm img {
+.joseph-suggestedItm img {
   height: 165px;
   width: 208px;
 }
 
-.shopName-small {
+.joseph-shopName-small {
   font-size: 16px;
   color: grey;
   margin: 5px;
@@ -249,27 +249,27 @@ body {
 ------------- Footer --------------
 -------------------------------- */
 
-.footerWrapper {
+.joseph-footerWrapper {
   display: flex;
   flex-direction: column;
 }
 
-.fa-instagram,
-.fa-facebook,
-.fa-pinterest,
-.fa-twitter,
-.fa-youtube {
+.joseph-instagram,
+.joseph-facebook,
+.joseph-pinterest,
+.joseph-twitter,
+.joseph-youtube {
   margin-right: 25px;
   font-size: 30px;
 }
 
-.bettershmetsy2 {
+.joseph-bettershmetsy2 {
   width: 100%;
   height: 61px;
   opacity: .92;
 }
 
-.download {
+.joseph-download {
   font-size: 13px;
   font-weight: 500;
   border: 2px solid white;
@@ -286,35 +286,35 @@ body {
   transition: .3s ease-in-out;
 } */
 
-.topFooter, .bottomFooter {
+.joseph-topFooter, .joseph-bottomFooter {
   color: #ffffff;
   display: flex;
   justify-content: space-evenly;
 }
 
-.shopFooter, .sellFooter, .aboutFooter, .helpFooter {
+.joseph-shopFooter, .joseph-sellFooter, .joseph-aboutFooter, .joseph-helpFooter {
   display: flex;
   flex-direction: column;
 }
 
-.shopFooter span,
-.sellFooter span,
-.aboutFooter span,
-.helpFooter span {
+.joseph-shopFooter span,
+.joseph-sellFooter span,
+.joseph-aboutFooter span,
+.joseph-helpFooter span {
   cursor: pointer;
   font-size: 14px;
   margin-bottom: 13px;
 }
 
-.shopFooter span:hover,
-.sellFooter span:hover,
-.aboutFooter span:hover,
-.helpFooter span:hover {
+.joseph-shopFooter span:hover,
+.joseph-sellFooter span:hover,
+.joseph-aboutFooter span:hover,
+.joseph-helpFooter span:hover {
   text-decoration: underline;
   text-decoration-color: white;
 }
 
-.logo {
+.joseph-logo {
   padding: 1.5px 7px 1.5px 7px;
   margin-left: 10px;
   margin-right: 5px;
@@ -327,16 +327,16 @@ body {
   font-weight: bold;
 }
 
-.topFooter h4, .bottomFooter h4 {
+.joseph-topFooter h4, .joseph-bottomFooter h4 {
   font-weight: 500;
 }
 
-.topFooter {
+.joseph-topFooter {
   background-color: rgb(28, 62, 108, .92);
   padding-bottom: 50px;
 }
 
-.usd img {
+.joseph-usd img {
   vertical-align: bottom;
   margin-right: 15px;
   width: 25px;
@@ -344,24 +344,24 @@ body {
   border-radius: 100%;
 }
 
-.bottomFooter {
+.joseph-bottomFooter {
   font-size: 14px;
   font-weight: 500;
   padding: 26px;
   background-color: rgb(35, 35, 71, .99);
 }
 
-.usd {
+.joseph-usd {
   margin-right: 500px;
 }
 
-.privacy span {
+.joseph-privacy span {
   letter-spacing: .5px;
   font-size: 13px;
   margin-right: 15px;
 }
 
-.privacyLink {
+.joseph-privacyLink {
   cursor: pointer;
   text-decoration: underline;
   text-decoration-color: #ffffff;
