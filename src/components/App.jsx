@@ -5,14 +5,21 @@ import ShopItems from './ShopItems.jsx';
 import Suggested from './Suggested.jsx';
 import Footer from './Footer.jsx';
 
+//create a file for a function to return a fetch call
+
+//check state if loaded
+
+//if not loaded, loading screen?
+//else if loaded return normal JSX
+
+//check for error, if internal or not and where it failed
+
 function App() {
 
   const obj = [];
-  for (let i = 0; i < 8; i ++) {
-    obj.push({id: 1, name: "Loading...", price: "Loading...", shipping: "Loading...", shop_id: 1, image_url: "Loading..."});
-  }
 
-  const [shopInfoData, updateShopInfoData] = useState('test')
+  const [status, updateStatus] = useState([404, "Loading..."]);
+  const [shopInfoData, updateShopInfoData] = useState('');
   const [randomItems, updateRandomItems] = useState(obj);
 
   function getRequest() {
@@ -26,25 +33,29 @@ function App() {
       id = window.location.pathname.slice(1, 4);
     }
 
-    $.ajax({
-      context: this,
-      method: 'GET',
-      url: `/products/${id}`,
-      success: function(result) {
-        var products = JSON.parse(result[0]);
-        var shops = JSON.parse(result[1]);
-        var randomItems = JSON.parse(result[2]);
-        updateBasicInfo(products, shops, randomItems);
-      },
-      error: function(err) {
-        console.log('There was an error getting data from express server: ', err);
-      }
-    });
+
+    fetch(`/products/${id}`)
+      .then(result => {
+        updateStatus([result.status, result.statusText]);
+        if (result.status === 200) {
+          return result.json();
+        } else {
+          return result.status;
+        }
+      })
+      .then(result => {
+        if (typeof result !== 'NUMBER') {
+          var products = JSON.parse(result[0]);
+          var shops = JSON.parse(result[1]);
+          var randomItems = JSON.parse(result[2]);
+          updateBasicInfo(products, shops, randomItems);
+        }
+      });
   }
 
   useEffect(() => {
     getRequest();
-  }, [shopInfoData]);
+  }, []);
 
   function updateBasicInfo(products, shops, randomProductItems) {
     updateShopInfoData({
@@ -60,27 +71,36 @@ function App() {
     updateRandomItems(randomProductItems);
   }
 
-  return (
-    <div className="joseph-wrapper">
-      <img className="joseph-topImg" src="https://imgforfec.s3.us-east-2.amazonaws.com/bettershmetsy.png" />
-      <div className="joseph-shop">
-        <ShopInfo data={shopInfoData} />
-        <ShopItems data={randomItems} />
+  if (status[0] !== 200) {
+    return (
+      <>
+        <h1 className="joseph-error">{status[0]}</h1>
+        <p className="joseph-error-desc">{status[1]}</p>
+      </>
+    );
+  } else {
+    return (
+      <div className="joseph-wrapper">
+        <img className="joseph-topImg" src="https://imgforfec.s3.us-east-2.amazonaws.com/bettershmetsy.png" />
+        <div className="joseph-shop">
+          <ShopInfo data={shopInfoData} />
+          <ShopItems data={randomItems} />
+        </div>
+        <div className="joseph-alsoLike">
+          <h1>You may also like</h1>
+          <span className="joseph-shopMore">Shop more similar items <i className="fa fa-arrow-right joseph-rightArrow"></i></span>
+        </div>
+        <div className="joseph-suggested">
+          <Suggested />
+        </div>
+        <h1 className="joseph-popular">Popular right now</h1>
+        <div className="joseph-suggested">
+          <Suggested />
+        </div>
+        <Footer />
       </div>
-      <div className="joseph-alsoLike">
-        <h1>You may also like</h1>
-        <span className="joseph-shopMore">Shop more similar items <i className="fa fa-arrow-right joseph-rightArrow"></i></span>
-      </div>
-      <div className="joseph-suggested">
-        <Suggested />
-      </div>
-      <h1 className="joseph-popular">Popular right now</h1>
-      <div className="joseph-suggested">
-        <Suggested />
-      </div>
-      <Footer />
-    </div>
-  );
+    );
+  }
 
 }
 

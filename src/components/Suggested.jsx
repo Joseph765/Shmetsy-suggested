@@ -13,7 +13,6 @@ function Suggested() {
       url: '/get/random',
       success: function(result) {
         if (counter === 2) {
-          console.log(result);
           updateSuggestionItems(result);
         }
       },

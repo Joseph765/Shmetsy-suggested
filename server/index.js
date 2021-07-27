@@ -17,14 +17,14 @@ app.get('/products/:id', (req, res, next) => {
   api.get('products', req.params.id, (err, result) => {
     if (err) {
       console.log('There was an error getting products from database: ', err);
-      next();
+      next(err);
     } else {
       data.push(result);
       const shopId = JSON.parse(result)[0].shop_id;
       api.get('shops', shopId, (shopErr, shopResult) => {
         if (err) {
           console.error('There was an error getting shops from database: ', shopErr);
-          next();
+          next(err);
         } else {
           data.push(shopResult);
           let id;
@@ -53,10 +53,11 @@ app.get('/products/:id', (req, res, next) => {
   });
 });
 
-app.get('/get/random', (req, res) => {
+app.get('/get/random', (req, res, next) => {
   api.get6Random((err, result) => {
     if (err) {
       console.error(`There was an error getting 6 random from database: ${err}`);
+      next(err);
     } else {
       res.send(result);
     }

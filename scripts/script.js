@@ -7,10 +7,12 @@ function getRandomProductImage() {
   const randomNum = Math.floor(Math.random() * 28) + 1;
   return `https://imgforfec.s3.us-east-2.amazonaws.com/${randomNum}.jpg`;
 }
+
 function getRandomProfileImage() {
   const randomNum = Math.floor(Math.random() * 4) + 2;
   return `https://imgforfec.s3.us-east-2.amazonaws.com/profile${randomNum}.jpg`;
 }
+
 function getRandomShippingInfo() {
   const randomNum = Math.floor(Math.random() * 2);
   if (randomNum === 0) {
