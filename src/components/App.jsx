@@ -5,15 +5,6 @@ import ShopItems from './ShopItems.jsx';
 import Suggested from './Suggested.jsx';
 import Footer from './Footer.jsx';
 
-//create a file for a function to return a fetch call
-
-//check state if loaded
-
-//if not loaded, loading screen?
-//else if loaded return normal JSX
-
-//check for error, if internal or not and where it failed
-
 function App() {
 
   const obj = [];
