@@ -1,5 +1,5 @@
-const faker = require('faker');
-const db = require('../db/index.js');
+const faker = require("faker");
+const db = require("../db/index.js");
 
 let shopId = 1;
 
@@ -16,13 +16,15 @@ function getRandomProfileImage() {
 function getRandomShippingInfo() {
   const randomNum = Math.floor(Math.random() * 2);
   if (randomNum === 0) {
-    return 'FREE shipping';
+    return "FREE shipping";
   }
-  return 'Free shipping eligible';
+  return "Free shipping eligible";
 }
 
 function getRandomDate() {
-  const randomDate = (Math.floor(Math.random() * (2020 - 2006)) + 2006).toString();
+  const randomDate = (
+    Math.floor(Math.random() * (2020 - 2006)) + 2006
+  ).toString();
   return randomDate;
 }
 
@@ -36,9 +38,9 @@ function addToProducts() {
     const str = `INSERT INTO products (name, shop_id, shipping, price, image_url) VALUES ("${fakeProductName}", ${shopId}, "${getRandomShippingInfo()}", "${`$${fakePrice}`}", "${getRandomProductImage()}")`;
     db.query(str, (err) => {
       if (err) {
-        console.log('There was an error adding to database => ', err);
+        console.log("There was an error adding to database => ", err);
       }
-      console.log('Populated! Press ^C to exit.');
+      console.log("Populated! Press ^C to exit.");
     });
   }
 }
@@ -54,7 +56,7 @@ function addToShops() {
     VALUES ("${fakeCompanyName}", "${fakeDate}", "${randomNumber}", "${location}", "${getRandomProfileImage()}", "${fakeNumOfItems.toString()}")`;
     db.query(str, (err) => {
       if (err) {
-        console.log('There was an error adding to database => ', err);
+        console.log("There was an error adding to database => ", err);
       }
     });
   }

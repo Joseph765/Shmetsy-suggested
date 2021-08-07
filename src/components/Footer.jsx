@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 
 function Footer() {
   return (
@@ -33,7 +33,10 @@ function Footer() {
           <h4>Help</h4>
           <span>Help center</span>
           <span>Privacy settings</span>
-          <div className="joseph-download"><i className="joseph-logo">S</i> Download the Shmetsy App &nbsp;&nbsp;&nbsp;</div>
+          <div className="joseph-download">
+            <i className="joseph-logo">S</i> Download the Shmetsy App
+            &nbsp;&nbsp;&nbsp;
+          </div>
           <div className="joseph-icons">
             <i className="fa fa-instagram joseph-instagram"></i>
             <i className="fa fa-facebook joseph-facebook"></i>
@@ -58,7 +61,7 @@ function Footer() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Footer;

@@ -1,29 +1,32 @@
-const express = require('express');
-const api = require('./api.js');
-const path = require('path');
+const express = require("express");
+const path = require("path");
+const api = require("./api.js");
 
 const app = express();
 const port = 4000;
 
-app.use(express.static(path.join(__dirname, '/../dist')));
-app.use('/:id', express.static('dist'));
+app.use(express.static(path.join(__dirname, "/../dist")));
+app.use("/:id", express.static("dist"));
 
 app.listen(`${port}`, () => {
   console.log(`Running on port ${port}!`);
 });
 
-app.get('/products/:id', (req, res, next) => {
+app.get("/products/:id", (req, res, next) => {
   const data = [];
-  api.get('products', req.params.id, (err, result) => {
+  api.get("products", req.params.id, (err, result) => {
     if (err) {
-      console.log('There was an error getting products from database: ', err);
+      console.log("There was an error getting products from database: ", err);
       next(err);
     } else {
       data.push(result);
       const shopId = JSON.parse(result)[0].shop_id;
-      api.get('shops', shopId, (shopErr, shopResult) => {
+      api.get("shops", shopId, (shopErr, shopResult) => {
         if (err) {
-          console.error('There was an error getting shops from database: ', shopErr);
+          console.error(
+            "There was an error getting shops from database: ",
+            shopErr
+          );
           next(err);
         } else {
           data.push(shopResult);
@@ -41,7 +44,10 @@ app.get('/products/:id', (req, res, next) => {
           }
           api.get8Random(id, (randomErr, randomResult) => {
             if (randomErr) {
-              console.error('There was an error getting 8 random photos from products: ', randomErr);
+              console.error(
+                "There was an error getting 8 random photos from products: ",
+                randomErr
+              );
             } else {
               data.push(randomResult);
               res.send(data);
@@ -53,10 +59,12 @@ app.get('/products/:id', (req, res, next) => {
   });
 });
 
-app.get('/get/random', (req, res, next) => {
+app.get("/get/random", (req, res, next) => {
   api.get6Random((err, result) => {
     if (err) {
-      console.error(`There was an error getting 6 random from database: ${err}`);
+      console.error(
+        `There was an error getting 6 random from database: ${err}`
+      );
       next(err);
     } else {
       res.send(result);

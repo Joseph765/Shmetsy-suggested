@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display");
 
 body {
   padding: 0;
@@ -8,7 +8,7 @@ body {
 }
 
 #suggested {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   color: #222;
   -webkit-font-smoothing: antialiased;
 }
@@ -19,7 +19,10 @@ body {
 
 .joseph-error {
   text-align: center;
-  vertical-align: middle;
+}
+
+.joseph-error-desc {
+  text-align: center;
 }
 
 /* --------------------------------
@@ -28,13 +31,13 @@ body {
 
 .joseph-rightArrow {
   transform: translateX(5px);
-  transition: .3s ease-out;
+  transition: 0.3s ease-out;
 }
 
 .joseph-shopMore:hover .joseph-rightArrow,
 .joseph-seeAll:hover .joseph-rightArrow {
   transform: translateX(10px);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .joseph-topImg {
@@ -92,7 +95,8 @@ body {
   margin-bottom: 2%;
 }
 
-.joseph-sales h4, .joseph-date h4 {
+.joseph-sales h4,
+.joseph-date h4 {
   font-size: 15px;
   white-space: nowrap;
   color: grey;
@@ -101,7 +105,8 @@ body {
   margin-bottom: 14px;
 }
 
-.joseph-sales span, .joseph-date span {
+.joseph-sales span,
+.joseph-date span {
   font-size: 26px;
   font-weight: 300;
 }
@@ -119,7 +124,7 @@ body {
 
 .joseph-shopName {
   font-size: 32px;
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: "Nanum Myeongjo", serif;
   font-weight: 400;
   margin-bottom: 6%;
   cursor: pointer;
@@ -141,11 +146,11 @@ body {
   margin: 5px;
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   text-align: center;
   width: 88px;
   padding: 3px;
-  background-color: #D4E9D7;
+  background-color: #d4e9d7;
   border-radius: 40px;
 }
 
@@ -163,18 +168,20 @@ body {
 }
 
 .joseph-imgItem {
-  transition: .3s ease;
+  transition: 0.3s ease;
   padding: 13px;
 }
 
-.joseph-imgItem, .joseph-suggestedItm {
+.joseph-imgItem,
+.joseph-suggestedItm {
   cursor: pointer;
   border-radius: 15px;
   margin-bottom: 3%;
   transition: 0.3s;
 }
 
-.joseph-imgItem:hover, .joseph-suggestedItm:hover {
+.joseph-imgItem:hover,
+.joseph-suggestedItm:hover {
   background-color: white;
   box-shadow: 10px 10px 50px grey;
 }
@@ -216,7 +223,7 @@ body {
   height: 58px;
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   cursor: pointer;
 }
 
@@ -226,7 +233,8 @@ body {
   width: 1367px;
 }
 
-.joseph-popular, .joseph-alsoLike h1 {
+.joseph-popular,
+.joseph-alsoLike h1 {
   font-weight: 300;
   letter-spacing: 1px;
   margin-bottom: 0;
@@ -275,7 +283,7 @@ body {
 .joseph-bettershmetsy2 {
   width: 100%;
   height: 61px;
-  opacity: .92;
+  opacity: 0.92;
 }
 
 .joseph-download {
@@ -295,13 +303,17 @@ body {
   transition: .3s ease-in-out;
 } */
 
-.joseph-topFooter, .joseph-bottomFooter {
+.joseph-topFooter,
+.joseph-bottomFooter {
   color: #ffffff;
   display: flex;
   justify-content: space-evenly;
 }
 
-.joseph-shopFooter, .joseph-sellFooter, .joseph-aboutFooter, .joseph-helpFooter {
+.joseph-shopFooter,
+.joseph-sellFooter,
+.joseph-aboutFooter,
+.joseph-helpFooter {
   display: flex;
   flex-direction: column;
 }
@@ -329,19 +341,20 @@ body {
   margin-right: 5px;
   border-radius: 5px;
   background-color: #ffffff;
-  color: rgb(28, 62, 108, .92);
+  color: rgb(28, 62, 108, 0.92);
   font-family: "playfairDisplay";
   font-size: 18px;
   font-style: italic;
   font-weight: bold;
 }
 
-.joseph-topFooter h4, .joseph-bottomFooter h4 {
+.joseph-topFooter h4,
+.joseph-bottomFooter h4 {
   font-weight: 500;
 }
 
 .joseph-topFooter {
-  background-color: rgb(28, 62, 108, .92);
+  background-color: rgb(28, 62, 108, 0.92);
   padding-bottom: 50px;
 }
 
@@ -357,7 +370,7 @@ body {
   font-size: 14px;
   font-weight: 500;
   padding: 26px;
-  background-color: rgb(35, 35, 71, .99);
+  background-color: rgb(35, 35, 71, 0.99);
 }
 
 .joseph-usd {
@@ -365,7 +378,7 @@ body {
 }
 
 .joseph-privacy span {
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   font-size: 13px;
   margin-right: 15px;
 }
