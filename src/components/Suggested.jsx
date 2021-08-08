@@ -4,32 +4,35 @@ import ReactDOM from "react-dom";
 function Suggested() {
   let counter = 1;
   const [suggestionItems, updateSuggestionItems] = useState([]);
+  const [status, updateStatus] = useState({
+    statusCode: 404,
+    statusText: "Loading...",
+  });
 
   function get() {
-    $.ajax({
-      context: this,
-      method: "GET",
-      url: "/get/random",
-      success: function (result) {
-        if (counter === 2) {
+    fetch("/get/random")
+      .then((result) => {
+        updateStatus({
+          statusCode: result.status,
+          statusText: result.statusText,
+        });
+
+        if (result.status === 200) {
+          return result.json();
+        }
+
+        return result.status;
+      })
+      .then((result) => {
+        if (isNaN(result)) {
           updateSuggestionItems(result);
         }
-      },
-      error: function (err) {
-        console.error(
-          "There was an error getting suggested items from database: ",
-          err
-        );
-      },
-    });
+      });
   }
 
   useEffect(() => {
-    if (counter === 1) {
-      counter += 1;
-      get();
-    }
-  }, [counter]);
+    get();
+  }, []);
 
   const suggestedNodes = suggestionItems.map((item) => {
     return (
@@ -43,7 +46,17 @@ function Suggested() {
     );
   });
 
-  return <div className="joseph-suggested">{suggestedNodes}</div>;
+  if (status.statusCode === 200) {
+    return <div className="joseph-suggested">{suggestedNodes}</div>;
+  }
+
+  return (
+    <div>
+      <h1 className="joseph-error">{status.statusCode}</h1>
+      <p>There was an error with fetching data for suggested items</p>
+      <p className="joseph-error-desc">{status.statusText}</p>
+    </div>
+  );
 }
 
 export default Suggested;

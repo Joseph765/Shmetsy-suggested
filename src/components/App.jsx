@@ -9,9 +9,9 @@ function App() {
   const [status, updateStatus] = useState({
     statusCode: 404,
     statusText: "Loading...",
-  }); //status of data fetching
-  const [shopInfo, updateShopInfo] = useState([]); //data for current shop on page
-  const [items, updateItems] = useState([]); //data for suggested items
+  });
+  const [shopInfo, updateShopInfo] = useState([]);
+  const [items, updateItems] = useState([]);
 
   function getRequest() {
     //getting id from current path url
@@ -25,7 +25,7 @@ function App() {
       id = window.location.pathname.slice(1, 4);
     }
 
-    //update status to 404 is id in pathname is not a number
+    //updates status to 404 if path name was not a number
     if (isNaN(id)) {
       updateStatus({ statusCode: 404, statusText: `Page Not Found: ${id}` });
       return;
@@ -34,16 +34,13 @@ function App() {
     //fetching data for products with id
     fetch(`/products/${id}`)
       .then((result) => {
-        //uses status from result to update state status
         updateStatus({
           statusCode: result.status,
           statusText: result.statusText,
         });
-        //if fetch was successful, the next .then() block will update state with new data
         if (result.status === 200) {
           return result.json();
         }
-        //if the fetch was unsuccessful then the next .then() will not update
         return result.status;
       })
       .then((result) => {
@@ -58,12 +55,10 @@ function App() {
   }
 
   useEffect(() => {
-    //calls getRequest function when page loads or the path (id) changes
     getRequest();
   }, []);
 
   function updateBasicInfo(shops, randomProductItems) {
-    //updates shop info with current shop data fetched
     updateShopInfo({
       shopName: shops[0].name,
       date: shops[0].date,
@@ -73,7 +68,6 @@ function App() {
       numOfItems: shops[0].items,
     });
 
-    //updates shop items
     updateItems(randomProductItems);
   }
 
